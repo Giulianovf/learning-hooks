@@ -4,17 +4,22 @@ import { UseStatePage } from './pages/useStatePage';
 import { UseEffectPage } from './pages/useEffectPage';
 import { UseCallbackPage } from './pages/useCallbackPage';
 import { UseMemoPage } from './pages/useMemoPage';
+import { UseRefPage } from './pages/useRef';
+import { UserContextProvider } from "./contexts/userContext";
 
 export const AppRoutes = () => {
     return(
         <BrowserRouter>
+        <UserContextProvider>
             <Routes>
                 <Route path='/' element={ <HomePage/>}/>
                 <Route path="/useState" element={<UseStatePage/>}/>
                 <Route path="/useEffect" element={<UseEffectPage/>}/>
                 <Route path="/useCallback" element={<UseCallbackPage/>}/>
                 <Route path="/useMemo" element={<UseMemoPage/>}/>
+                <Route path="/useRef" element={<UseRefPage/>}/>
             </Routes>
+        </UserContextProvider>
         </BrowserRouter>
     )
 }
